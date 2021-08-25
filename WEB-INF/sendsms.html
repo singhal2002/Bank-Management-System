@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <script type="text/javascript">
+        function onsubmitt()
+        {
+            return confirm("are u sure want to continue");
+        }
+        </script>
+    </head>
+    <body>
+        <br><br>
+        <form method="POST" action="sendsms" onsubmit="return onsubmitt()">
+        Enter Destination phone no.<input type="text" name="destination_phoneno"><br>
+        Enter message to send<textarea name="message" readonly=true rows=5 maxlength=160 cols=25></textarea>
+        <input type="submit">
+        </form>
+    </body>
+</html>
