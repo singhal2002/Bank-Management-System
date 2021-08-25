@@ -1,0 +1,88 @@
+<html>
+<body>
+<form action="login" method=post onSubmit="return onsubmitt()">
+<br> <br> <br>
+<table align=center border=2>
+
+<tr>
+<td> Login Id:</td>
+<td>
+<input type=text name=loginid id=loginid required>
+</td>
+</tr>
+<tr><td> Login Password: </td>
+<td><input type=text name=loginpwd id=loginpwd required></td></tr>
+<tr> <Td colspan=2 align=center> 
+<input type=submit value="Register"> </td></tr>
+</table>
+</form>
+
+
+<script> 
+function onsubmitt()
+{
+try
+{
+var loginid=document.getElementById("loginid").value;
+/*
+ if(loginid.length==0)
+{
+alert("Login ID required");
+return false;
+} */
+
+
+if(loginid.length > 30)
+{
+alert("login id is invalid, max 30 chars allowed");
+return false;
+}
+for( var loop=0; loop<loginid.length;loop++)
+{
+var ch=loginid.charAt(loop);
+if((ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z'))
+{}
+else
+{
+alert("login id is invalid, only alphabets allowed");
+return false;
+}
+}
+
+
+var loginpwd=document.getElementById("loginpwd").value;
+if(loginpwd.length==0)
+{
+alert("Login password required");
+return false;
+}
+if(loginpwd.length > 30)
+{
+alert("login password is invalid, max 30 chars allowed");
+return false;
+}
+for( var loop =0; loop<loginpwd.length;loop++)
+{
+var ch=loginpwd.charAt(loop);
+if((ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z')||(ch>='0'&&ch<='9'))
+{}
+else
+{
+alert("login password is invalid, only alphabets and numerics allowed");
+return false;
+}
+}
+return true;
+}
+
+catch(e)
+{
+alert(e);
+}
+}
+
+          
+</script>
+
+</body>
+</html>
